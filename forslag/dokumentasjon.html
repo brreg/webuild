@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.doc">Documentation | Brønnøysund Register Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script>try { if (localStorage.getItem("sprak") === "nb") document.documentElement.style.visibility = "hidden"; } catch (e) {}</script>
+</head>
+<body>
+  <a class="skip" href="#innhold" style="position:absolute;left:-999px" data-i18n="skip">Skip to content</a>
+  <div class="side">
+    <div class="deko venstre" aria-hidden="true"></div>
+    <div class="deko hoyre" aria-hidden="true"></div>
+
+    <header class="topp">
+      <a class="logo utsnitt" href="index.html" role="img" aria-label="WE BUILD – home" data-i18n-attr="aria-label=logo.label"></a>
+      <a class="navn" href="index.html" data-i18n="brand">WEBUILD – Brønnøysund Register Centre</a>
+      <nav class="meny" aria-label="Main menu" data-i18n-attr="aria-label=nav.main">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.no">Norwegian company</span>
+            <ul>
+            <li><a href="tildele-fullmakt.html" data-i18n="nav.poa">Powers of attorney</a></li>
+            <li><a href="hente-eucc.html" data-i18n="nav.attest">Business attestations</a></li>
+            </ul></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.fo">Foreign company</span>
+            <ul>
+            <li><a href="filialregistrering.html" data-i18n="nav.branch">Branch registration</a></li>
+            </ul></li>
+          <li class="skille"><a href="oppslag-testvirksomhet.html" data-i18n="nav.testdata">Test data</a></li>
+          <li class="skille"><a href="dokumentasjon.html" aria-current="page" data-i18n="nav.doc">Documentation</a></li>
+        </ul>
+      </nav>
+      <div class="sprak" role="group" aria-label="Language" data-i18n-attr="aria-label=lang.label">
+        <button type="button" lang="en" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" lang="nb" data-lang="nb" aria-pressed="false">Norsk</button>
+      </div>
+    </header>
+
+<main class="innhold" id="innhold">
+    <section class="panel">
+      <p class="eyebrow" data-i18n="doc.eyebrow">Documentation</p>
+      <h1 data-i18n="doc.h1">Documentation</h1>
+      <p data-i18n="doc.lead">Background and reference material for the demonstration of cross-border branch registration in the WE BUILD pilot.</p>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="doc.terms">Terms</h2>
+      <dl class="facts">
+        <dt data-i18n="t.eudi.dt">EUDI Wallet</dt>
+        <dd data-i18n="t.eudi.dd">European Digital Identity Wallet. A wallet under the eIDAS2 Regulation in which a person holds and presents electronic attestations of attributes.</dd>
+        <dt>EBW</dt>
+        <dd data-i18n="t.ebw.dd">European Business Wallet. A wallet for organisations to exchange verified data and documents, as proposed in the draft EBW regulation.</dd>
+        <dt>PID</dt>
+        <dd data-i18n="t.pid.dd">Person Identification Data. The attestation that identifies a natural person and is issued to the EUDI Wallet.</dd>
+        <dt>EU PoA</dt>
+        <dd data-i18n="t.poa.dd">EU Power of Attorney. An attestation that a natural person is authorised to represent a company.</dd>
+        <dt>EUCC</dt>
+        <dd data-i18n="t.eucc.dd">EU Company Certificate. An attestation of the company’s data from the business register in its home Member State.</dd>
+        <dt>EUID</dt>
+        <dd data-i18n="t.euid.dd">European Unique Identifier. The identifier that identifies a company across the business registers of the Member States.</dd>
+        <dt>(Q)EAA</dt>
+        <dd data-i18n="t.eaa.dd">(Qualified) Electronic Attestation of Attributes. The type of attestation that PID, EU PoA and EUCC are issued as.</dd>
+        <dt data-i18n="t.home.dt">Home Member State</dt>
+        <dd data-i18n="t.home.dd">The Member State where the company is registered. It issues the power of attorney and the EUCC.</dd>
+        <dt data-i18n="t.host.dt">Host Member State</dt>
+        <dd data-i18n="t.host.dd">The Member State where the branch is registered. It receives the attestations and registers the branch.</dd>
+      </dl>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="doc.links">Specifications and legal basis</h2>
+      <ul class="lenker">
+        <li><a href="https://github.com/webuild-consortium/BU2/blob/main/Specifications/createCompanyBranch.md" target="_blank" rel="noopener" data-i18n="doc.l.bu2">WE BUILD BU2: Create Company Branch (specification)</a></li>
+        <li><a href="https://github.com/webuild-consortium" target="_blank" rel="noopener" data-i18n="doc.l.wb">WE BUILD consortium on GitHub</a></li>
+        <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj" target="_blank" rel="noopener" data-i18n="doc.l.eidas">Regulation (EU) 2024/1183 (eIDAS2), amending Regulation (EU) No 910/2014</a></li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="doc.about">About this demonstration</h2>
+      <p data-i18n="doc.about.p">This is a demonstration in the WE BUILD pilot. All data are fictitious test data, and the service must not be used as a source of real register information.</p>
+    </section>
+  </main>
+
+    <p class="ansvar"><span data-i18n="ansvar">This is a proposal and a demonstration using fictitious data. The service is provided “as is”, without warranties, and must not be used as a source of actual register information.</span> <span class="ki" data-i18n="ki">This documentation was produced with the help of generative artificial intelligence (AI), Claude Code from Anthropic. The content has been checked over by project staff.</span></p>
+    <footer class="bunn">
+      <div class="eu utsnitt" role="img" aria-label="Co-funded by the European Union"></div>
+    </footer>
+  </div>
+  <script src="../i18n.js"></script>
+  <script src="../bilder.js"></script>
+</body>
+</html>

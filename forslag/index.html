@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.home">Home | Brønnøysund Register Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script>try { if (localStorage.getItem("sprak") === "nb") document.documentElement.style.visibility = "hidden"; } catch (e) {}</script>
+</head>
+<body>
+  <a class="skip" href="#innhold" style="position:absolute;left:-999px" data-i18n="skip">Skip to content</a>
+  <div class="side">
+    <div class="deko venstre" aria-hidden="true"></div>
+    <div class="deko hoyre" aria-hidden="true"></div>
+
+    <header class="topp">
+      <a class="logo utsnitt" href="index.html" role="img" aria-label="WE BUILD – home" data-i18n-attr="aria-label=logo.label"></a>
+      <a class="navn" href="index.html" data-i18n="brand">WEBUILD – Brønnøysund Register Centre</a>
+      <nav class="meny" aria-label="Main menu" data-i18n-attr="aria-label=nav.main">
+        <ul>
+          <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.no">Norwegian company</span>
+            <ul>
+            <li><a href="tildele-fullmakt.html" data-i18n="nav.poa">Powers of attorney</a></li>
+            <li><a href="hente-eucc.html" data-i18n="nav.attest">Business attestations</a></li>
+            </ul></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.fo">Foreign company</span>
+            <ul>
+            <li><a href="filialregistrering.html" data-i18n="nav.branch">Branch registration</a></li>
+            </ul></li>
+          <li class="skille"><a href="oppslag-testvirksomhet.html" data-i18n="nav.testdata">Test data</a></li>
+          <li class="skille"><a href="dokumentasjon.html" data-i18n="nav.doc">Documentation</a></li>
+        </ul>
+      </nav>
+      <div class="sprak" role="group" aria-label="Language" data-i18n-attr="aria-label=lang.label">
+        <button type="button" lang="en" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" lang="nb" data-lang="nb" aria-pressed="false">Norsk</button>
+      </div>
+    </header>
+
+<main class="innhold forside" id="innhold">
+      <div class="intro">
+        <div>
+          <h1 data-i18n="home.h1">Branch registration using wallets and attestations</h1>
+          <div class="strek" aria-hidden="true"></div>
+          <p class="ingress" data-i18n="home.lead">Cross-border registration of a company branch in a Business Register in another EU or EEA Member State, using the European Digital Identity Wallet to present issued (Q)EAAs, with Business Registers acting as relying parties, and leveraging a European Business Wallet (EBW).</p>
+          <p class="ingress dempet" data-i18n="home.demo">Demo service in the WE BUILD pilot. All data is fictitious test data.</p>
+        </div>
+        <img class="bu2" src="../assets/bu2.png" width="371" height="407" alt="BU2 – Create Company Branch">
+      </div>
+
+      <h2 data-i18n="home.steps">Choose your situation</h2>
+      <div class="loesninger">
+        <section class="sti" aria-labelledby="sti-no">
+          <h3 id="sti-no" data-i18n="path.no.h">Norwegian company registers a branch abroad</h3>
+          <p class="chip" data-i18n="path.no.chip">Norway is the home Member State</p>
+          <ol class="steg">
+            <li><a href="tildele-fullmakt.html"><span class="nr" aria-hidden="true">1</span><h4 data-i18n="c1.h">Registration of power of attorney (EU PoA)</h4><p data-i18n="c1.p">Register a power of attorney to represent a Norwegian company when registering a branch in another country.</p></a></li>
+            <li><a href="hente-fullmakt.html"><span class="nr" aria-hidden="true">2</span><h4 data-i18n="c2.h">Obtain power of attorney (EU PoA)</h4><p data-i18n="c2.p">The authorised representative obtains their EU PoA as an electronic attestation of attributes.</p></a></li>
+            <li><a href="hente-eucc.html"><span class="nr" aria-hidden="true">3</span><h4 data-i18n="c3.h">Obtain EUCC</h4><p data-i18n="c3.p">The authorised representative obtains the company's EUCC as an electronic attestation of attributes.</p></a></li>
+            <li><div class="kort ute"><span class="nr" aria-hidden="true">→</span><h4 data-i18n="out.no.h">Branch registration in the other country</h4><p data-i18n="out.no.p">Done in that country’s own solution, outside this demo.</p></div></li>
+          </ol>
+        </section>
+        <section class="sti" aria-labelledby="sti-fo">
+          <h3 id="sti-fo" data-i18n="path.fo.h">Foreign company registers a branch in Norway</h3>
+          <p class="chip" data-i18n="path.fo.chip">Norway is the host Member State</p>
+          <ol class="steg">
+            <li><div class="kort ute"><span class="nr" aria-hidden="true">⇢</span><h4 data-i18n="out.fo.h">Obtain EU PoA and EUCC</h4><p data-i18n="out.fo.p">Obtained in your home Member State, in that country’s own solution.</p></div></li>
+            <li><a href="filialregistrering.html"><span class="nr" aria-hidden="true">1</span><h4 data-i18n="c4.h">Carry out branch registration</h4><p data-i18n="c4.p">The authorised representative of the foreign company carries out the registration of a Norwegian branch.</p></a></li>
+          </ol>
+        </section>
+      </div>
+      <p class="nokkel"><span class="nk"><span class="sw inne" aria-hidden="true"></span><span data-i18n="key.in">Available in this solution</span></span> <span class="nk"><span class="sw ute" aria-hidden="true"></span><span data-i18n="key.out">Done in another country’s solution</span></span></p>
+    </main>
+    <p class="ansvar"><span data-i18n="ansvar">This is a proposal and a demonstration using fictitious data. The service is provided “as is”, without warranties, and must not be used as a source of actual register information.</span> <span class="ki" data-i18n="ki">This documentation was produced with the help of generative artificial intelligence (AI), Claude Code from Anthropic. The content has been checked over by project staff.</span></p>
+    <footer class="bunn">
+      <div class="eu utsnitt" role="img" aria-label="Co-funded by the European Union"></div>
+    </footer>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+</html>

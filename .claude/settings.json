@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "ask": [
+      "Edit(/brreg-filialregistrering.html)",
+      "Write(/brreg-filialregistrering.html)"]
+  }
+}

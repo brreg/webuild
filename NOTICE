@@ -1,0 +1,61 @@
+Filialregistrering med lommebok og bevis (WE BUILD-demo)
+Copyright (c) 2026 Brønnøysundregistrene
+
+LISENSER
+
+- Kildekoden (HTML, CSS, JavaScript og Python-skriptene) er lisensiert under
+  European Union Public Licence v. 1.2 (EUPL-1.2), se LICENSE.
+- Dokumentasjon og egne tekster er lisensiert under Creative Commons
+  Navngivelse 4.0 Internasjonal (CC BY 4.0), se LICENSE-docs.
+
+UNNTAK: INNHOLD SOM IKKE ER OMFATTET AV LISENSENE
+
+Følgende tilhører andre og er ikke lisensiert under EUPL-1.2 eller CC BY 4.0.
+Det brukes i henhold til eiernes egne vilkår:
+
+- WE BUILD-logoen og WE BUILD-grafikk (assets/we-build-mal-gul.png,
+  assets/bu2.png, assets/favicon.png, assets/apple-touch-icon.png).
+  Bruken følger WE BUILDs regler for merkevare og synlighet.
+- EU-emblemet og merket «Co-funded by the European Union» / «Medfinansiert av
+  Den europeiske union». Bruken følger EUs regler for bruk av emblemet og
+  synlighetskravene i tilskuddsavtalen.
+- Navn, logoer og varemerker som tilhører Brønnøysundregistrene, Altinn,
+  Digitaliseringsdirektoratet, ID-porten og andre.
+- Skjermbilder av tredjepartstjenester (assets/steg/). De vises bare som
+  illustrasjon.
+- Testdata fra Brønnøysundregistrene og Digitaliseringsdirektoratet
+  (Testdata/*.xlsx og testdata-data.js, som genereres fra disse). Bruken følger
+  vilkårene til de som har levert testdataene.
+
+Engelske tekster for næringskoder (Testdata/nace-en.json) kommer fra Statistisk
+sentralbyrå (SSB), KLASS, og er tilgjengelige under CC BY 4.0.
+
+EU-FINANSIERING
+
+Prosjektet er medfinansiert av Den europeiske union. Synspunktene som uttrykkes,
+er utelukkende forfatterens/forfatternes og gjenspeiler ikke nødvendigvis
+synspunktene til Den europeiske union eller den bevilgende myndigheten. Verken
+Den europeiske union eller den bevilgende myndigheten kan holdes ansvarlig for dem.
+
+---------------------------------------------------------------------------
+
+LICENCES (English)
+
+- Source code (HTML, CSS, JavaScript and the Python scripts) is licensed under
+  the European Union Public Licence v. 1.2 (EUPL-1.2), see LICENSE.
+- Documentation and original text are licensed under Creative Commons
+  Attribution 4.0 International (CC BY 4.0), see LICENSE-docs.
+
+EXCEPTIONS: The WE BUILD logo and graphics, the EU emblem and the "Co-funded by
+the European Union" mark, names, logos and trademarks of Brønnøysundregistrene,
+Altinn, the Norwegian Digitalisation Agency, ID-porten and others, screenshots
+of third-party services (assets/steg/), and test data from
+Brønnøysundregistrene and the Norwegian Digitalisation Agency (Testdata/*.xlsx,
+testdata-data.js) are NOT covered by these licences and are used under their
+respective owners' terms. The NACE descriptions in Testdata/nace-en.json come
+from Statistics Norway (SSB), KLASS, under CC BY 4.0.
+
+Co-funded by the European Union. Views and opinions expressed are however those
+of the author(s) only and do not necessarily reflect those of the European Union
+or the granting authority. Neither the European Union nor the granting authority
+can be held responsible for them.

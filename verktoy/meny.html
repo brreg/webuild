@@ -1,0 +1,40 @@
+<!-- Felles toppmeny og undermenyer for sidene i forslag/. Rediger her og kjør python verktoy/bygg-meny.py.
+     aria-current="page" settes av skriptet; ikke skriv det her. -->
+    <header class="topp">
+      <a class="logo utsnitt" href="index.html" role="img" aria-label="WE BUILD – home" data-i18n-attr="aria-label=logo.label"></a>
+      <a class="navn" href="index.html" data-i18n="brand">WEBUILD – Brønnøysund Register Centre</a>
+      <nav class="meny" aria-label="Main menu" data-i18n-attr="aria-label=nav.main">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.no">Norwegian company</span>
+            <ul>
+            <li><a href="tildele-fullmakt.html" data-i18n="nav.poa">Powers of attorney</a></li>
+            <li><a href="hente-eucc.html" data-i18n="nav.attest">Business attestations</a></li>
+            </ul></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.fo">Foreign company</span>
+            <ul>
+            <li><a href="filialregistrering.html" data-i18n="nav.branch">Branch registration</a></li>
+            </ul></li>
+          <li class="skille"><a href="oppslag-testvirksomhet.html" data-i18n="nav.testdata">Test data</a></li>
+          <li class="skille"><a href="dokumentasjon.html" data-i18n="nav.doc">Documentation</a></li>
+        </ul>
+      </nav>
+      <div class="sprak" role="group" aria-label="Language" data-i18n-attr="aria-label=lang.label">
+        <button type="button" lang="en" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" lang="nb" data-lang="nb" aria-pressed="false">Norsk</button>
+      </div>
+    </header>
+
+    <nav class="undermeny" data-group="fullmakter" aria-label="Powers of attorney" data-i18n-attr="aria-label=sub.poa">
+      <ul>
+        <li><a href="tildele-fullmakt.html" data-i18n="sub.grant">Grant power of attorney (EU PoA)</a></li>
+        <li><a href="hente-fullmakt.html" data-i18n="sub.obtainpoa">Obtain power of attorney (EU PoA)</a></li>
+      </ul>
+    </nav>
+
+    <nav class="undermeny" data-group="testdata" aria-label="Test data" data-i18n-attr="aria-label=sub.testdata">
+      <ul>
+        <li><a href="oppslag-testvirksomhet.html" data-i18n="sub.company">Test company lookup</a></li>
+        <li><a href="oppslag-testperson.html" data-i18n="sub.person">Test person lookup</a></li>
+      </ul>
+    </nav>

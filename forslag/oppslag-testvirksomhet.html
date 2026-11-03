@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.company">Test company lookup | Brønnøysund Register Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script>try { if (localStorage.getItem("sprak") === "nb") document.documentElement.style.visibility = "hidden"; } catch (e) {}</script>
+</head>
+<body>
+  <a class="skip" href="#innhold" style="position:absolute;left:-999px" data-i18n="skip">Skip to content</a>
+  <div class="side">
+    <div class="deko venstre" aria-hidden="true"></div>
+    <div class="deko hoyre" aria-hidden="true"></div>
+
+    <header class="topp">
+      <a class="logo utsnitt" href="index.html" role="img" aria-label="WE BUILD – home" data-i18n-attr="aria-label=logo.label"></a>
+      <a class="navn" href="index.html" data-i18n="brand">WEBUILD – Brønnøysund Register Centre</a>
+      <nav class="meny" aria-label="Main menu" data-i18n-attr="aria-label=nav.main">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.no">Norwegian company</span>
+            <ul>
+            <li><a href="tildele-fullmakt.html" data-i18n="nav.poa">Powers of attorney</a></li>
+            <li><a href="hente-eucc.html" data-i18n="nav.attest">Business attestations</a></li>
+            </ul></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.fo">Foreign company</span>
+            <ul>
+            <li><a href="filialregistrering.html" data-i18n="nav.branch">Branch registration</a></li>
+            </ul></li>
+          <li class="skille"><a href="oppslag-testvirksomhet.html" aria-current="page" data-i18n="nav.testdata">Test data</a></li>
+          <li class="skille"><a href="dokumentasjon.html" data-i18n="nav.doc">Documentation</a></li>
+        </ul>
+      </nav>
+      <div class="sprak" role="group" aria-label="Language" data-i18n-attr="aria-label=lang.label">
+        <button type="button" lang="en" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" lang="nb" data-lang="nb" aria-pressed="false">Norsk</button>
+      </div>
+    </header>
+
+    <nav class="undermeny" aria-label="Test data" data-i18n-attr="aria-label=sub.testdata">
+      <ul>
+        <li><a href="oppslag-testvirksomhet.html" aria-current="page" data-i18n="sub.company">Test company lookup</a></li>
+        <li><a href="oppslag-testperson.html" data-i18n="sub.person">Test person lookup</a></li>
+      </ul>
+    </nav>
+
+<main class="innhold" id="innhold">
+    <section class="panel">
+      <p class="eyebrow" data-i18n="nav.testdata">Test data</p>
+      <h1 data-i18n="lk.h1">Look up test company</h1>
+      <p data-i18n="lk.lead">Select a test company to see information about the company and the persons associated with it.</p>
+      <label for="velg-virksomhet" data-i18n="lk.label">Test company</label>
+      <select id="velg-virksomhet"></select>
+    </section>
+    <section class="panel" id="resultat-virksomhet" aria-live="polite" hidden></section>
+  </main>
+
+    <p class="ansvar"><span data-i18n="ansvar">This is a proposal and a demonstration using fictitious data. The service is provided “as is”, without warranties, and must not be used as a source of actual register information.</span> <span class="ki" data-i18n="ki">This documentation was produced with the help of generative artificial intelligence (AI), Claude Code from Anthropic. The content has been checked over by project staff.</span></p>
+    <footer class="bunn">
+      <div class="eu utsnitt" role="img" aria-label="Co-funded by the European Union"></div>
+    </footer>
+  </div>
+  <script src="../testdata-data.js"></script>
+  <script src="../i18n.js"></script>
+  <script src="../oppslag.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "kilde": "SSB KLASS, standard for næringsgruppering SN2007 (norsk NACE Rev. 2), engelske navn: https://data.ssb.no/api/klass/v1/classifications/6/codes?language=en",
+  "koder": {
+    "43.210": "Electrical installation",
+    "43.340": "Painting and glazing",
+    "47.631": "Retail sale of sports equipment",
+    "49.410": "Freight transport by road",
+    "58.290": "Other software publishing",
+    "64.323": "Other captive investment companies",
+    "74.110": "Industrial product and fashion design activities",
+    "94.110": "Activities of business and employers membership organisations",
+    "96.210": "Hairdressing and barber activities"
+  }
+}

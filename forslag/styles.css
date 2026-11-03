@@ -1,0 +1,310 @@
+/* Stilark for WE BUILD-løsningen (forslag/), basert på WE BUILD-malen. */
+:root {
+  --blaa: #003399;
+  --lavendel: #e6e6f1;
+  --bakgrunn: #f6f6fb;
+  --gul: #ffcc00;
+  --tekst: #1d2a44;
+  --dempet: #55607a;
+  --kant: #d6d9e6;
+  --focus: #f2a900;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bakgrunn);
+  color: var(--tekst);
+  font-family: "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+a { color: var(--blaa); }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.side {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Kantene følger formene i malen: gul blokk til venstre, lavendelform til høyre */
+  --venstre: clamp(64px, calc(8.6vw + 28px), 200px);
+  --hoyre: clamp(24px, 3.5vw, 72px);
+  --innholdsbredde: 1700px; /* største bredde på forsiden */
+  --innholdsbredde-side: 1120px; /* største bredde på undersidene */
+}
+
+/* Dekorative former fra malen */
+.deko { position: absolute; pointer-events: none; }
+.deko.venstre {
+  left: 0; bottom: 0;
+  width: clamp(40px, 8.6vw, 170px);
+  height: min(54vh, 603px);
+  background: var(--gul);
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+}
+.deko.hoyre {
+  right: 0; top: 0;
+  width: clamp(40px, 8.6vw, 170px);
+  height: min(57vh, 635px);
+  background: var(--lavendel);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+}
+
+/* Utsnitt fra malen: logo og EU-merke */
+.utsnitt {
+  background-image: url("../assets/we-build-mal-gul.png");
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply; /* hvit bakgrunn i utsnittene blir gjennomsiktig */
+}
+.logo {
+  display: block;
+  width: 176px; height: 164px;
+  background-size: 1787px auto;
+  background-position: -63px -45px;
+  flex: none;
+}
+.eu {
+  width: 276px; height: 60px;
+  background-size: 1787px auto;
+  background-position: -302px -929px;
+}
+
+header.topp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 16px clamp(16px, 3vw, 48px) 0 clamp(16px, 3.5vw, 60px);
+  flex-wrap: wrap;
+}
+header.topp .navn { font-weight: 700; color: var(--blaa); font-size: 1.15rem; text-decoration: none; }
+
+/* Språkvelger */
+.sprak { margin-left: auto; margin-right: clamp(0px, 2.5vw, 48px); display: flex; gap: 2px; padding: 3px; background: #fff; border: 1px solid var(--kant); border-radius: 999px; }
+.sprak button {
+  font: inherit; font-size: .85rem; font-weight: 600; border: 0; background: transparent;
+  color: var(--blaa); padding: 4px 14px; border-radius: 999px; cursor: pointer;
+}
+.sprak button:hover { background: var(--lavendel); }
+.sprak button[aria-pressed="true"] { background: var(--blaa); color: #fff; }
+.sprak button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* når menyen ikke får plass på én linje: språkvalget står øverst til høyre, menyen på egen linje under */
+@media (max-width: 2100px) {
+  .sprak { order: 1; }
+  nav.meny { order: 2; flex-basis: 100%; }
+}
+nav.meny ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+nav.meny a {
+  display: block; padding: 8px 14px; border-radius: 999px;
+  color: var(--blaa); font-weight: 600; text-decoration: none; font-size: .95rem;
+}
+nav.meny a:hover { background: var(--lavendel); }
+nav.meny a[aria-current="page"] { background: var(--blaa); color: #fff; }
+
+.innhold {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: calc(var(--venstre) + var(--innholdsbredde) + var(--hoyre));
+  padding: 8px var(--hoyre) 24px var(--venstre);
+}
+
+.innhold:not(.forside) { max-width: calc(var(--venstre) + var(--innholdsbredde-side) + var(--hoyre)); }
+
+.intro { display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: center; }
+.bu2 { width: clamp(150px, 17vw, 230px); height: auto; mix-blend-mode: multiply; justify-self: center; }
+
+.intro h1 {
+  color: var(--blaa);
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  line-height: 1.12;
+  margin: 12px 0 14px;
+  max-width: 46ch;
+}
+.strek {
+  height: 6px; width: 120px; border-radius: 3px; margin-bottom: 22px;
+  background: linear-gradient(90deg, var(--blaa), var(--gul));
+}
+.innhold .ingress { max-width: 110ch; font-size: 1.1rem; margin: 0 0 14px; }
+.ingress.dempet { color: var(--dempet); font-size: 1rem; }
+
+h2 { color: var(--blaa); font-size: 1.3rem; margin: 34px 0 20px; }
+
+.steg {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 28px 18px;
+  grid-template-columns: repeat(2, 1fr); /* 2 x 2 på mellomstore skjermer */
+}
+@media (min-width: 1300px) { .steg { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .steg { grid-template-columns: 1fr; } }
+.steg li { position: relative; }
+.steg a, .steg .kort {
+  display: block; height: 100%;
+  background: #fff; color: var(--tekst); text-decoration: none;
+  border: 1px solid var(--kant); border-radius: 10px;
+  padding: 34px 18px 18px;
+  box-shadow: 0 1px 0 rgba(0,51,153,.05);
+}
+.steg a:hover { border-color: var(--blaa); box-shadow: 0 6px 18px rgba(0,51,153,.12); }
+.steg .nr {
+  position: absolute; top: -18px; left: 16px;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--blaa); color: #fff; font-weight: 700;
+  display: grid; place-items: center;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--gul);
+}
+.steg h3, .steg h4 { margin: 0 0 6px; color: var(--blaa); font-size: 1.05rem; line-height: 1.25; font-weight: 700; }
+.steg p { margin: 0; color: var(--dempet); font-size: .95rem; }
+
+/* To separate løsninger på forsiden */
+.loesninger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+@media (max-width: 900px) { .loesninger { grid-template-columns: 1fr; } }
+.sti { background: rgba(255, 255, 255, .55); border: 1px solid var(--kant); border-radius: 14px; padding: 18px 18px 22px; }
+.sti > h3 { margin: 0 0 8px; color: var(--blaa); font-size: 1.2rem; line-height: 1.25; }
+.sti .steg { grid-template-columns: 1fr; }
+.chip { display: inline-block; margin: 0 0 26px; padding: 2px 12px; border-radius: 999px; background: var(--lavendel); color: var(--blaa); font-size: .85rem; font-weight: 600; }
+.steg .kort.ute { background: transparent; border: 1px dashed #8f98b3; color: var(--dempet); box-shadow: none; }
+.steg .kort.ute h4 { color: var(--dempet); }
+.steg .kort.ute .nr { background: var(--bakgrunn); color: var(--dempet); border: 1px dashed #8f98b3; box-shadow: none; }
+.nokkel { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; font-size: .9rem; color: var(--dempet); }
+.nk { display: inline-flex; align-items: center; gap: 8px; }
+.sw { display: inline-block; width: 16px; height: 16px; border-radius: 4px; }
+.sw.inne { background: #fff; border: 1px solid var(--kant); box-shadow: 0 0 0 2px var(--gul); }
+.sw.ute { border: 1px dashed #8f98b3; }
+
+/* Menygrupper */
+nav.meny li.gruppe { display: flex; align-items: center; gap: 2px; margin-left: 8px; padding-left: 12px; border-left: 2px solid var(--gul); }
+nav.meny > ul > li.skille { display: flex; align-items: center; margin-left: 8px; padding-left: 12px; border-left: 2px solid var(--gul); }
+nav.meny .gnavn { font-size: .75rem; font-weight: 600; color: var(--dempet); }
+
+footer.bunn {
+  position: absolute; left: var(--venstre); bottom: 0;
+  padding: 0 0 16px 0;
+  display: flex; align-items: flex-end;
+}
+.ansvar {
+  position: relative;
+  padding: 0 var(--venstre) 96px var(--venstre);
+  max-width: 1000px; color: var(--dempet); font-size: .85rem;
+}
+.ansvar .ki { display: block; margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .side { --venstre: calc(clamp(40px, 8.6vw, 170px) + 16px); --hoyre: clamp(24px, 3.5vw, 40px); }
+}
+
+@media (max-width: 720px) {
+  .logo { width: 110px; height: 102px; background-size: 1117px auto; background-position: -39px -28px; }
+  .deko.venstre, .deko.hoyre { width: 28px; }
+  .side { --venstre: 44px; }
+  .innhold { padding: 8px 28px 24px var(--venstre); }
+  .sprak { margin-right: 0; }
+  .intro { grid-template-columns: 1fr; }
+  .bu2 { width: 150px; justify-self: start; }
+  .eu { width: 184px; height: 40px; background-size: 1191px auto; background-position: -201px -619px; }
+}
+
+/* ---------- Undermeny ---------- */
+nav.undermeny { position: relative; padding: 4px clamp(16px, 3vw, 48px) 0 var(--venstre); }
+nav.undermeny ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
+nav.undermeny a {
+  display: block; padding: 6px 2px; color: var(--blaa); text-decoration: none;
+  font-weight: 600; font-size: .92rem; border-bottom: 3px solid transparent;
+}
+nav.undermeny a:hover { border-bottom-color: var(--lavendel); }
+nav.undermeny a[aria-current="page"] { border-bottom-color: var(--gul); }
+
+/* ---------- Innholdskomponenter fra de eksisterende sidene ---------- */
+.innhold { padding-bottom: 24px; } /* ansvarsteksten under gir plass til EU-merket */
+.innhold .panel {
+  background: #fff; border: 1px solid var(--kant); border-radius: 12px;
+  padding: 26px 28px; margin: 14px 0 22px;
+}
+.innhold .eyebrow { font-size: .85rem; color: var(--dempet); margin: 0 0 6px; }
+.innhold h1 {
+  color: var(--blaa); font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.15; margin: 0 0 12px;
+}
+.innhold h1::after {
+  content: ""; display: block; height: 5px; width: 90px; border-radius: 3px; margin-top: 12px;
+  background: linear-gradient(90deg, var(--blaa), var(--gul));
+}
+.innhold .panel h2 { color: var(--blaa); font-size: 1.3rem; margin: 0 0 12px; }
+.innhold .panel h3 { color: var(--blaa); font-size: 1.1rem; margin: 0 0 6px; }
+.innhold p { max-width: 75ch; }
+.innhold code { background: var(--lavendel); padding: 1px 6px; border-radius: 4px; }
+.innhold ul.lenker { padding-left: 1.4rem; max-width: 80ch; }
+.innhold ul.lenker li { margin-bottom: 8px; overflow-wrap: anywhere; }
+.innhold ol.steps { padding-left: 1.6rem; max-width: 80ch; }
+.innhold ol.steps li { margin-bottom: 9px; }
+.innhold ol.steps li::marker { color: var(--blaa); font-weight: 700; }
+.innhold ol.steps a { overflow-wrap: anywhere; }
+.innhold .notice {
+  max-width: 75ch; background: var(--lavendel); border-left: 5px solid var(--gul);
+  padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0 0;
+}
+.innhold .hint { color: var(--dempet); font-size: .92rem; margin: 8px 0 0; }
+.innhold label { display: block; font-weight: 600; margin-bottom: 4px; }
+.innhold select, .innhold input[type="text"] {
+  font: inherit; padding: 9px 12px; min-width: 320px; max-width: 100%;
+  border: 1px solid #8f98b3; border-radius: 8px; background: #fff; color: var(--tekst);
+}
+.innhold select:focus-visible, .innhold input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.innhold .btn {
+  display: inline-block; border: 0; border-radius: 999px; background: var(--blaa); color: #fff;
+  font: inherit; font-weight: 600; padding: 10px 22px; text-decoration: none; cursor: pointer;
+}
+.innhold .btn:hover { background: #00267a; }
+.innhold .btn.btn-eu { background: #fff; border: 1px solid var(--blaa); padding: 8px 12px; margin-left: 6px; line-height: 0; vertical-align: middle; }
+.innhold .btn.btn-eu:hover { background: var(--lavendel); }
+.innhold .btn.btn-eu svg { width: 42px; height: 28px; }
+
+/* Ikon ved et steg som åpner et skjermbilde (bilder.js) */
+.innhold .bilde {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; margin-left: 6px; padding: 0; vertical-align: middle;
+  border: 1px solid var(--blaa); border-radius: 50%; background: #fff; color: var(--blaa); cursor: pointer;
+}
+.innhold .bilde:hover { background: var(--lavendel); }
+.innhold .bilde:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.bildedialog {
+  position: fixed; border: 0; border-radius: 12px; padding: 0; background: #fff; color: var(--tekst);
+  max-width: min(94vw, 1100px); max-height: 94vh; overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+.bildedialog::backdrop { background: rgba(10, 20, 50, .6); }
+.bildedialog figure { margin: 0; }
+.bildedialog img { display: block; max-width: 100%; max-height: 78vh; margin: 0 auto; }
+.bildedialog figcaption { padding: 12px 56px 14px 20px; border-top: 1px solid var(--kant); font-size: .95rem; }
+.bildedialog .lukk {
+  position: absolute; bottom: 6px; right: 10px; width: 36px; height: 36px; padding: 0;
+  border: 1px solid var(--blaa); border-radius: 50%; background: #fff; color: var(--blaa);
+  font-size: 1.4rem; line-height: 1; cursor: pointer;
+}
+.bildedialog .lukk:hover { background: var(--lavendel); }
+.bildedialog .lukk:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.innhold .btn.liten { padding: 5px 16px; font-size: .88rem; margin-left: 6px; white-space: nowrap; }
+@media (max-width: 720px) {
+  /* lange knappetekster må kunne brytes på smale skjermer */
+  .innhold .btn.liten { white-space: normal; border-radius: 16px; text-align: left; }
+}
+.innhold .next { text-align: right; margin: 0 0 8px; max-width: none; }
+.innhold dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 24px; margin: 0; }
+.innhold dl.facts dt { font-weight: 600; color: var(--dempet); }
+.innhold dl.facts dd { margin: 0; }
+.innhold .table-wrap { overflow-x: auto; }
+.innhold table { width: 100%; border-collapse: collapse; }
+.innhold th, .innhold td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--kant); }
+.innhold th { background: var(--lavendel); color: var(--blaa); font-size: .9rem; }
+
+@media (max-width: 720px) {
+  nav.undermeny { padding-left: var(--venstre); }
+  .innhold .panel { padding: 20px 18px; }
+  .innhold dl.facts { grid-template-columns: 1fr; gap: 2px; }
+  .innhold dl.facts dd { margin-bottom: 10px; }
+  .innhold select, .innhold input[type="text"] { min-width: 0; width: 100%; }
+}

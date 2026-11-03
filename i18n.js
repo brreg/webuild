@@ -1,0 +1,266 @@
+// Språkvelger: engelsk er forhåndsvalgt, norsk kan velges (valget huskes i nettleseren).
+// Elementer med data-i18n="nøkkel" får innholdet (HTML) byttet ut; den engelske teksten står i selve HTML-en.
+// data-i18n-attr="attributt=nøkkel;..." oversetter attributter. I18N.t(nøkkel) brukes av oppslag.js.
+// Nye tekster må legges inn både i HTML-en (engelsk) og i NB nedenfor.
+(function () {
+  const NB = {
+    "home.h1": "Filialregistrering med bruk av lommebok og bevis",
+    "home.lead": "Grenseoverskridende registrering av en selskapsfilial i et foretaksregister i en annen EU- eller EØS-medlemsstat, der den europeiske lommeboken for digital identitet (EUDI-lommeboken) brukes til å presentere utstedte (Q)EAA-er, foretaksregistrene opptrer som tillitsparter, og en europeisk virksomhetslommebok (European Business Wallet, EBW) benyttes.",
+    "home.demo": "Demotjeneste i WE BUILD-piloten. Alle data er fiktive testdata.",
+    "home.steps": "Velg din situasjon",
+    "c1.h": "Registrering av fullmakt (EU PoA)",
+    "c1.p": "Registrer fullmakt til å representere et norsk selskap ved registrering av filial i et annet land.",
+    "c2.h": "Hente fullmakt (EU PoA)",
+    "c2.p": "Fullmektigen henter sin EU PoA som et digitalt bevis.",
+    "c3.h": "Hente EUCC",
+    "c3.p": "Fullmektigen henter virksomhetens EUCC som et digitalt bevis.",
+    "c4.h": "Gjennomføre filialregistrering",
+    "c4.p": "Fullmektigen for den utenlandske virksomheten gjennomfører registrering av norsk filial.",
+    "ansvar": "Dette er et forslag og en demonstrasjon som bruker fiktive data. Tjenesten leveres «som den er», uten garantier, og skal ikke brukes som kilde til reelle registeropplysninger.",
+    "ki": "Denne dokumentasjonen er laget med hjelp av generativ kunstig intelligens (KI), Claude Code fra Anthropic. Innholdet er gjennomgått av prosjektets medarbeidere.",
+    "title.home": "Forside | Brønnøysundregistrene",
+    "nav.home": "Forside",
+    "nav.poa": "Fullmakter",
+    "nav.attest": "Virksomhetsbevis",
+    "nav.branch": "Filialregistrering",
+    "nav.testdata": "Testdata",
+    "skip": "Hopp til innhold",
+    "logo.label": "WE BUILD – til forsiden",
+    "brand": "WEBUILD – Brønnøysundregistrene",
+    "nav.main": "Hovedmeny",
+    "lang.label": "Språk",
+    "t.s1": "Åpne",
+    "t.s1b": "Skjema for registrering av fullmakt (EU PoA)",
+    "t.s2": "Du får opp en påloggingsside for ID-porten.",
+    "t.s3": "Bytt språk til engelsk.",
+    "t.s4": "Velg <strong>TestID</strong> på nivå <strong>høyt</strong> under <strong>Norwegian login</strong>.",
+    "t.s5": "Legg inn personidentifikator (fødselsnummer) til daglig leder i feltet <strong>Person identifier (synthetic)</strong>.",
+    "t.s6": "Trykk på <strong>Authenticate</strong>.",
+    "t.s7": "Nå er du logget inn i Altinn og har fått opp en oversikt over hvilke virksomheter du er registrert som daglig leder for. Velg den virksomheten som det skal utstedes EU PoA for.",
+    "t.s8": "Fyll inn data i skjemaet <strong>Registrer EU-PoA</strong>. Informasjon om selskapet og innlogget daglig leder er ferdig utfylt. Fyll inn følgende informasjon om fullmektigen:",
+    "f.name": "Navn",
+    "f.dob": "Fødselsdato (MM/DD/YYYY)",
+    "t.s9": "Angi hva fullmakten går ut på.",
+    "t.s10": "Oppgi utløpsdato for fullmakten (MM/DD/YYYY).",
+    "t.s11": "Signer og send inn. Du vil få kvittering på at fullmakten er opprettet.",
+    "t.s12": "Naviger til menyen øverst i høyre hjørne og logg ut.",
+    "eyebrow.1": "Steg 1",
+    "t.h1": "Tildele fullmakt (EU PoA)",
+    "howto": "Slik gjør du det",
+    "t.intro": "Personen som skal utstede fullmakt på vegne av selskapet må være registrert med rollen «Daglig leder» i selskapet. Velg en testvirksomhet for å se opplysninger om virksomheten og personene som er knyttet til den.",
+    "sub.company": "Oppslag testvirksomhet",
+    "t.done": "Fullmakten (EU PoA) skal nå være opprettet.",
+    "next.obtainpoa": "Neste steg: Hente fullmakt (EU PoA) →",
+    "title.grant": "Tildele fullmakt (EU PoA) | Brønnøysundregistrene",
+    "sub.grant": "Tildele fullmakt (EU PoA)",
+    "sub.obtainpoa": "Hente fullmakt (EU PoA)",
+    "sub.poa": "Fullmakter",
+    "o.s1": "Fullmektigen logger inn i",
+    "o.intl": "Velg <strong>Internasjonal</strong> som metode for innlogging.",
+    "o.email": "Velg <strong>Log in med e-post</strong>.",
+    "o.code": "Oppgi e-postadresse, og deretter engangskoden som ble sendt til oppgitt e-postadresse.",
+    "o.12345": "Bruk koden «12345» og gå videre.",
+    "o.s6": "Scan QR-koden for å hente EU PoA.",
+    "o.approve": "Godkjenn forespørselen i lommeboken.",
+    "o.s8": "Trykk på at du har delt data fra lommeboken i nettsiden.",
+    "o.s9": "Godkjenn mottak av EU PoA i lommeboken.",
+    "eyebrow.2": "Steg 2",
+    "o.h1": "Hente Fullmakt (EU PoA)",
+    "o.lead": "Personen som ble registrert som fullmektig i steg 1 henter nå sin fullmakt som et digitalt bevis.",
+    "o.done": "EU PoA skal nå være lastet ned i lommeboken.",
+    "next.eucc": "Neste steg: Hent EUCC →",
+    "title.obtainpoa": "Hente fullmakt (EU PoA) | Brønnøysundregistrene",
+    "e.login": "Logg inn i",
+    "e.s1b": "Bruk e-postadressen som du registrerte i",
+    "e.s1c": "steg 2",
+    "e.s6": "Oppgi EUID og navn til den norske virksomheten som har utstedt fullmakten (EU PoA).",
+    "e.s7": "Scan QR-koden.",
+    "home.aria": "Til forsiden",
+    "eyebrow.3": "Steg 3",
+    "e.h1": "Hent EUCC",
+    "e.done": "EUCC skal nå være lastet ned i lommeboken. Fortsett med å registrere filialen i det andre landets egen løsning.",
+    "title.eucc": "Hent EUCC | Brønnøysundregistrene",
+    "b.h1": "Gjennomføre filialregistrering",
+    "b.lead": "Fullmektigen for den utenlandske virksomheten gjennomfører registrering av norsk filial. Fullmektigen må ha følgende bevis i sin EUDI-lommebok, hentet i selskapets hjemstat: PID, EU PoA og EUCC for den utenlandske virksomheten.",
+    "b.s2": "Fullmektigen med norsk EUDI-lommebok velger <strong>Digital lommebok</strong> som innloggingsmetode under <strong>Norsk innlogging</strong>.",
+    "title.branch": "Filialregistrering | Brønnøysundregistrene",
+    "lk.h1": "Slå opp testvirksomhet",
+    "lk.lead": "Velg en testvirksomhet for å se opplysninger om virksomheten og personene som er knyttet til den.",
+    "lk.label": "Testvirksomhet",
+    "title.company": "Oppslag testvirksomhet | Brønnøysundregistrene",
+    "sub.person": "Oppslag testperson",
+    "sub.testdata": "Testdata",
+    "lp.h1": "Slå opp testperson",
+    "lp.lead": "Velg en testperson for å se opplysninger om personen og virksomhetene personen er knyttet til.",
+    "lp.label": "Testperson",
+    "title.person": "Oppslag testperson | Brønnøysundregistrene",
+    "sel.choose": "Velg …",
+    "r.euid": "EUID",
+    "r.addr": "Forretningsadresse",
+    "r.nace": "Næringskode",
+    "r.sig": "Signaturrett",
+    "r.persons": "Tilknyttede personer",
+    "r.name": "Navn",
+    "r.role": "Rolle",
+    "r.dob": "Fødselsdato",
+    "r.pid": "Personidentifikator",
+    "r.notinfile": "Ikke i personfilen",
+    "r.ceo": "Daglig leder",
+    "r.none": "Ingen tilknyttede registreringer i testdataene.",
+    "p.pob": "Fødested",
+    "p.nat": "Nasjonalitet",
+    "p.companies": "Tilknyttede virksomheter",
+    "p.company": "Virksomhet",
+    "bilde.vis": "Vis skjermbilde",
+    "bilde.lukk": "Lukk",
+    "bilde.t2": "ID-porten: velg TestID på nivå høyt under Norwegian login.",
+    "bilde.t5": "TestID: legg inn personidentifikator (synthetic) til daglig leder.",
+    "bilde.t7": "Altinn: velg virksomheten det skal utstedes EU PoA for.",
+    "bilde.t8a": "Oversikt over EU-PoA-er: velg Registrer ny EU-PoA.",
+    "bilde.t8b": "Skjemaet Registrer EU-PoA utfylt med opplysninger om fullmektigen.",
+    "bilde.o2": "ID-porten: velg International som innloggingsmetode.",
+    "bilde.o4": "Email login: oppgi e-postadressen din.",
+    "bilde.o5": "Email login: oppgi engangskoden.",
+    "bilde.t11a": "Signering: kontroller opplysningene og signer.",
+    "bilde.t11b": "Kvittering: skjemaet er sendt inn.",
+    "bilde.vis.t8a": "Vis skjermbilde: oversikt",
+    "bilde.vis.t8b": "Vis skjermbilde: skjema",
+    "bilde.vis.t11a": "Vis skjermbilde: signering",
+    "bilde.vis.t11b": "Vis skjermbilde: kvittering",
+    "bilde.o6": "Altinn: skann QR-koden med lommeboken og del PID-dataene dine.",
+    "bilde.o8": "Altinn: bekreft at du har delt PID-dataene dine fra lommeboken.",
+    "bilde.e6": "EUCC issuer: oppgi EUID og navn til virksomheten.",
+    "bilde.e7": "Altinn: skann QR-koden for å motta EUCC.",
+    "out.no.h": "Filialregistrering i det andre landet",
+    "out.no.p": "Gjøres i det landets egen løsning, utenfor denne demoen.",
+    "out.fo.h": "Hente EU PoA og EUCC",
+    "out.fo.p": "Hentes i hjemstaten, i det landets egen løsning.",
+    "path.no.h": "Norsk virksomhet registrerer filial i utlandet",
+    "path.no.chip": "Norge er hjemstaten",
+    "path.fo.h": "Utenlandsk virksomhet registrerer filial i Norge",
+    "path.fo.chip": "Norge er vertsstaten",
+    "key.in": "Finnes i denne løsningen",
+    "key.out": "Gjøres i et annet lands løsning",
+    "nav.g.no": "Norsk selskap",
+    "nav.g.fo": "Utenlandsk virksomhet",
+    "next.branch": "Neste steg: Gjennomfør registrering av den norske virksomhetens filial →",
+    "nav.doc": "Dokumentasjon",
+    "title.doc": "Dokumentasjon | Brønnøysundregistrene",
+    "t.eudi.dd": "Europeisk lommebok for digital identitet. En lommebok etter eIDAS2-forordningen der en person oppbevarer og fremviser elektroniske bevis.",
+    "t.eudi.dt": "EUDI-lommebok",
+    "t.ebw.dd": "Europeisk virksomhetslommebok (European Business Wallet). En lommebok der virksomheter utveksler verifiserte data og dokumenter, slik det er foreslått i utkastet til EBW-forordning.",
+    "t.pid.dd": "Personidentifikasjonsdata (Person Identification Data). Beviset som identifiserer en fysisk person og utstedes til EUDI-lommeboken.",
+    "t.poa.dd": "EU-fullmakt (EU Power of Attorney). Et bevis for at en fysisk person har fullmakt til å representere en virksomhet.",
+    "t.eucc.dd": "EU-virksomhetssertifikat (EU Company Certificate). Et bevis på virksomhetens opplysninger fra foretaksregisteret i hjemstaten.",
+    "t.euid.dd": "Europeisk unik identifikator (European Unique Identifier). Identifikatoren som skiller en virksomhet fra andre på tvers av medlemsstatenes foretaksregistre.",
+    "t.eaa.dd": "(Kvalifisert) elektronisk bevis på egenskaper ((Qualified) Electronic Attestation of Attributes). Typen bevis som PID, EU PoA og EUCC utstedes som.",
+    "t.home.dd": "Medlemsstaten der virksomheten er registrert. Den utsteder fullmakten og EUCC.",
+    "t.home.dt": "Hjemstat",
+    "t.host.dd": "Medlemsstaten der filialen registreres. Den mottar bevisene og registrerer filialen.",
+    "t.host.dt": "Vertsstat",
+    "doc.eyebrow": "Dokumentasjon",
+    "doc.h1": "Dokumentasjon",
+    "doc.lead": "Bakgrunn og referansemateriale for demonstrasjonen av grenseoverskridende filialregistrering i WE BUILD-piloten.",
+    "doc.terms": "Begreper",
+    "doc.links": "Spesifikasjoner og rettslig grunnlag",
+    "doc.l.bu2": "WE BUILD BU2: Create Company Branch (spesifikasjon)",
+    "doc.l.wb": "WE BUILD-konsortiet på GitHub",
+    "doc.l.eidas": "Forordning (EU) 2024/1183 (eIDAS2), som endrer forordning (EU) nr. 910/2014",
+    "doc.about": "Om denne demonstrasjonen",
+    "doc.about.p": "Dette er en demonstrasjon i WE BUILD-piloten. Alle data er fiktive testdata, og tjenesten skal ikke brukes som kilde til reelle registeropplysninger."
+  };
+  // Engelske tekster som bare brukes fra JavaScript (resten står i HTML-en)
+  const EN = {
+    "title.home": "Home | Brønnøysund Register Centre",
+    "title.grant": "Grant power of attorney (EU PoA) | Brønnøysund Register Centre",
+    "title.obtainpoa": "Obtain power of attorney (EU PoA) | Brønnøysund Register Centre",
+    "title.eucc": "Obtain EUCC | Brønnøysund Register Centre",
+    "title.branch": "Branch registration | Brønnøysund Register Centre",
+    "title.company": "Test company lookup | Brønnøysund Register Centre",
+    "title.person": "Test person lookup | Brønnøysund Register Centre",
+    "title.doc": "Documentation | Brønnøysund Register Centre",
+    "sel.choose": "Select …",
+    "r.euid": "EUID",
+    "r.addr": "Business address",
+    "r.nace": "NACE code",
+    "r.sig": "Signatory rights",
+    "r.persons": "Associated persons",
+    "r.name": "Name",
+    "r.role": "Role",
+    "r.dob": "Date of birth",
+    "r.pid": "Person identifier",
+    "r.notinfile": "Not in the person file",
+    "r.ceo": "CEO",
+    "r.none": "No associated records in the test data.",
+    "p.pob": "Place of birth",
+    "p.nat": "Nationality",
+    "p.companies": "Associated companies",
+    "p.company": "Company",
+    "bilde.vis": "Show screenshot",
+    "bilde.lukk": "Close",
+    "bilde.t2": "ID-porten: select TestID på nivå høyt under Norwegian login.",
+    "bilde.t5": "TestID: enter the person identifier (synthetic) of the CEO.",
+    "bilde.t7": "Altinn: select the company the EU PoA is to be issued for.",
+    "bilde.t8a": "Overview of EU-PoAs: select Register new EU-PoA.",
+    "bilde.t8b": "The form Register EU-PoA with the authorised representative’s details filled in.",
+    "bilde.o2": "ID-porten: select International as the login method.",
+    "bilde.o4": "Email login: enter your email address.",
+    "bilde.o5": "Email login: enter the one-time code.",
+    "bilde.t11a": "Signing: review the information and sign.",
+    "bilde.t11b": "Receipt: the form is submitted.",
+    "bilde.vis.t8a": "Show screenshot: overview",
+    "bilde.vis.t8b": "Show screenshot: form",
+    "bilde.vis.t11a": "Show screenshot: signing",
+    "bilde.vis.t11b": "Show screenshot: receipt",
+    "bilde.o6": "Altinn: scan the QR code with your wallet and share your PID data.",
+    "bilde.o8": "Altinn: confirm that you have shared your PID data from the wallet.",
+    "bilde.e6": "EUCC issuer: enter the EUID and name of the company.",
+    "bilde.e7": "Altinn: scan the QR code to receive the EUCC."
+  };
+
+  const LAGRING = "sprak";
+  let lang = "en";
+  try { const s = localStorage.getItem(LAGRING); if (s === "nb" || s === "en") lang = s; } catch (e) {}
+  const original = new WeakMap();
+
+  function bruk() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      if (!original.has(el)) original.set(el, el.innerHTML);
+      const nb = NB[el.dataset.i18n];
+      el.innerHTML = lang === "nb" && nb !== undefined ? nb : original.get(el);
+    });
+    document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+      const orig = original.get(el) || {};
+      original.set(el, orig);
+      el.dataset.i18nAttr.split(";").forEach((par) => {
+        const [attr, key] = par.split("=");
+        if (!(attr in orig)) orig[attr] = el.getAttribute(attr);
+        el.setAttribute(attr, lang === "nb" && NB[key] !== undefined ? NB[key] : orig[attr]);
+      });
+    });
+    document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    // Skjult av skriptet i <head> når norsk er valgt, så den engelske teksten ikke blinker forbi
+    document.documentElement.style.visibility = "";
+  }
+
+  function sett(nytt) {
+    if (nytt === lang) return;
+    lang = nytt;
+    try { localStorage.setItem(LAGRING, lang); } catch (e) {}
+    bruk();
+    document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
+  }
+
+  window.I18N = {
+    get lang() { return lang; },
+    set: sett,
+    t: (key) => (lang === "nb" ? NB[key] : EN[key]) ?? NB[key] ?? key,
+  };
+
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-lang]");
+    if (b) sett(b.dataset.lang);
+  });
+  bruk();
+})();
