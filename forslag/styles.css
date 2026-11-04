@@ -171,6 +171,27 @@ h2 { color: var(--blaa); font-size: 1.3rem; margin: 34px 0 20px; }
 .steg .kort.ute { background: transparent; border: 1px dashed #8f98b3; color: var(--dempet); box-shadow: none; }
 .steg .kort.ute h4 { color: var(--dempet); }
 .steg .kort.ute .nr { background: var(--bakgrunn); color: var(--dempet); border: 1px dashed #8f98b3; box-shadow: none; }
+.land-valg:focus-visible, .valgdialog button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.land { margin-top: 14px; padding-top: 12px; border-top: 1px dashed #8f98b3; }
+.steg .land p { margin: 0 0 10px; }
+.land ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.land-valg {
+  display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; font: inherit; color: var(--tekst);
+  background: #fff; border: 1px solid var(--blaa); border-radius: 8px; cursor: pointer;
+}
+.land-valg:hover { background: var(--lavendel); }
+.land-valg img.flagg { height: 1.4rem; width: auto; outline: 1px solid rgba(0, 0, 0, .2); }
+.valgdialog {
+  border: 0; border-radius: 12px; padding: 22px 24px; background: #fff; color: var(--tekst);
+  max-width: min(92vw, 480px); box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+.valgdialog::backdrop { background: rgba(10, 20, 50, .6); }
+.valgdialog p { margin: 0 0 10px; }
+.valgdialog .sporsmal { font-weight: 600; color: var(--blaa); }
+.valgdialog .adresse { color: var(--dempet); font-size: .9rem; overflow-wrap: anywhere; }
+.valgdialog .knapper { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
+.valgdialog button { font: inherit; padding: 8px 18px; border-radius: 8px; border: 1px solid var(--blaa); background: #fff; color: var(--blaa); cursor: pointer; }
+.valgdialog button.apne { background: var(--blaa); color: #fff; }
 .nokkel { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; font-size: .9rem; color: var(--dempet); }
 .nk { display: inline-flex; align-items: center; gap: 8px; }
 .sw { display: inline-block; width: 16px; height: 16px; border-radius: 4px; }
@@ -239,6 +260,7 @@ nav.undermeny a[aria-current="page"] { border-bottom-color: var(--gul); }
 .innhold code { background: var(--lavendel); padding: 1px 6px; border-radius: 4px; }
 .innhold ul.lenker { padding-left: 1.4rem; max-width: 80ch; }
 .innhold ul.lenker li { margin-bottom: 8px; overflow-wrap: anywhere; }
+.innhold ul.lenker img.flagg { height: .85em; width: auto; margin-right: .45em; vertical-align: -.05em; outline: 1px solid rgba(0, 0, 0, .2); }
 .innhold ol.steps { padding-left: 1.6rem; max-width: 80ch; }
 .innhold ol.steps li { margin-bottom: 9px; }
 .innhold ol.steps li::marker { color: var(--blaa); font-weight: 700; }

@@ -24,7 +24,7 @@ def les(p):
 
 def datauri(sti):
     b = (rot / sti).read_bytes()
-    mime = {".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg"}[pathlib.Path(sti).suffix.lower()]
+    mime = {".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".svg": "image/svg+xml"}[pathlib.Path(sti).suffix.lower()]
     return f"data:{mime};base64," + base64.b64encode(b).decode("ascii")
 
 
@@ -60,12 +60,13 @@ for p in SIDER:
     titler[p] = re.search(r'<title data-i18n="([^"]+)"', src).group(1)  # nøkkel i i18n.js
     inner = re.search(r'<main class="innhold[^"]*" id="innhold">(.*?)</main>', src, re.S).group(1)
     inner = inner.replace('src="../assets/bu2.png"', f'src="{bu2}"')
+    inner = re.sub(r'src="\.\./(assets/flagg/[^"]+)"', lambda m: f'src="{datauri(m.group(1))}"', inner)
     inner = re.sub(r'data-bilde="\.\./(assets/steg/[^"]+)"', lambda m: f'data-bilde="{datauri(m.group(1))}"', inner)
     sider.append(f'<div class="side-innhold" id="page-{p}" hidden>{lenker(inner)}</div>')
     for s in re.findall(r"<script>(.*?)</script>", src[src.index("<body>"):], re.S):  # f.eks. skjema-script
         skript.append(s)
 
-i18n = (rot / "i18n.js").read_text(encoding="utf-8") + "\n" + (rot / "bilder.js").read_text(encoding="utf-8")
+i18n = (rot / "i18n.js").read_text(encoding="utf-8") + "\n" + (rot / "bilder.js").read_text(encoding="utf-8") + "\n" + (rot / "land.js").read_text(encoding="utf-8")
 data = (rot / "testdata-data.js").read_text(encoding="utf-8")
 oppslag = (rot / "oppslag.js").read_text(encoding="utf-8")
 

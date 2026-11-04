@@ -16,13 +16,13 @@ s = js.index("const NB = ") + 11
 nb, _ = json.JSONDecoder().raw_decode(js[s:])
 en = set(re.findall(r'"([\w.]+)":', js[js.index("const EN = "):]))
 sider = [p.read_text(encoding="utf-8") for p in sorted((rot / "forslag").glob("*.html"))]
-kode = "".join(sider) + les("oppslag.js") + les("bilder.js")
+kode = "".join(sider) + les("oppslag.js") + les("bilder.js") + les("land.js")
 
 brukt = set(re.findall(r'data-i18n="([\w.]+)"', kode))
 for attr in re.findall(r'data-i18n-attr="([^"]+)"', kode):
     for par in attr.split(";"):
         brukt.add(par.split("=")[1])
-brukt |= set(re.findall(r'data-tekst="([\w.]+)"', kode))
+brukt |= set(re.findall(r'data-(?:tekst|sporsmal)="([\w.]+)"', kode))
 brukt |= set(re.findall(r'T\("([\w.]+)"\)', kode))
 dyn = ("c.", "bilde.")
 print("NB ubrukt:", sorted(k for k in nb if k not in brukt and not k.startswith(dyn)))
