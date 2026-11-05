@@ -60,14 +60,36 @@
             <li><a href="tildele-fullmakt.html"><span class="nr" aria-hidden="true">1</span><h4 data-i18n="c1.h">Registration of power of attorney (EU PoA)</h4><p data-i18n="c1.p">Register a power of attorney to represent a Norwegian company when registering a branch in another country.</p></a></li>
             <li><a href="hente-fullmakt.html"><span class="nr" aria-hidden="true">2</span><h4 data-i18n="c2.h">Obtain power of attorney (EU PoA)</h4><p data-i18n="c2.p">The authorised representative obtains their EU PoA as an electronic attestation of attributes.</p></a></li>
             <li><a href="hente-eucc.html"><span class="nr" aria-hidden="true">3</span><h4 data-i18n="c3.h">Obtain EUCC</h4><p data-i18n="c3.p">The authorised representative obtains the company's EUCC as an electronic attestation of attributes.</p></a></li>
-            <li><div class="kort ute"><span class="nr" aria-hidden="true">→</span><h4 data-i18n="out.no.h">Branch registration in the other country</h4><p data-i18n="out.no.p">Done in that country’s own solution, outside this demo.</p></div></li>
+            <li>
+              <div class="kort ute">
+                <span class="nr" aria-hidden="true">→</span><h4 data-i18n="out.no.h">Branch registration in the other country</h4><p data-i18n="out.no.p">Done in that country’s own solution, outside this demo.</p>
+                <!-- Landene og lenkene holdes i synk med «National solutions for branch registration» i dokumentasjon.html -->
+                <div class="land">
+                  <p data-i18n="land.velg">Select a country to open its national solution:</p>
+                  <ul>
+                    <li><button type="button" class="land-valg" data-sporsmal="land.sporsmal" data-url="https://vero-wb-prh-web.minisuomi.net/"><img class="flagg" src="../assets/flagg/fi.svg" alt=""><span data-i18n="land.fi">Finland</span></button></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
           </ol>
         </section>
         <section class="sti" aria-labelledby="sti-fo">
           <h3 id="sti-fo" data-i18n="path.fo.h">Foreign company registers a branch in Norway</h3>
           <p class="chip" data-i18n="path.fo.chip">Norway is the host Member State</p>
           <ol class="steg">
-            <li><div class="kort ute"><span class="nr" aria-hidden="true">⇢</span><h4 data-i18n="out.fo.h">Obtain EU PoA and EUCC</h4><p data-i18n="out.fo.p">Obtained in your home Member State, in that country’s own solution.</p></div></li>
+            <li>
+              <div class="kort ute">
+                <span class="nr" aria-hidden="true">⇢</span><h4 data-i18n="out.fo.h">Obtain EU PoA and EUCC</h4><p data-i18n="out.fo.p">Obtained in your home Member State, in that country’s own solution.</p>
+                <!-- Landene og lenkene holdes i synk med «EU PoA and EUCC issuers» i dokumentasjon.html -->
+                <div class="land">
+                  <p data-i18n="land.velg.eucc">Select your home country to open its EU PoA and EUCC issuer:</p>
+                  <ul>
+                    <li><button type="button" class="land-valg" data-sporsmal="land.sporsmal.eucc" data-url="https://vero-wb-prh-web.minisuomi.net/"><img class="flagg" src="../assets/flagg/fi.svg" alt=""><span data-i18n="land.fi">Finland</span></button></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
             <li><a href="filialregistrering.html"><span class="nr" aria-hidden="true">1</span><h4 data-i18n="c4.h">Carry out branch registration</h4><p data-i18n="c4.p">The authorised representative of the foreign company carries out the registration of a Norwegian branch.</p></a></li>
           </ol>
         </section>
@@ -80,5 +102,6 @@
     </footer>
   </div>
   <script src="../i18n.js"></script>
+  <script src="../land.js"></script>
 </body>
 </html>
