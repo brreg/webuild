@@ -187,6 +187,7 @@
     "land.sporsmal": "Vil du åpne den nasjonale løsningen for filialregistrering i {land} i en ny fane?",
     "land.apne": "Åpne i ny fane",
     "land.avbryt": "Avbryt",
+    "doc.l.dir": "Direktiv (EU) 2025/25, som endrer direktivene 2009/102/EF og (EU) 2017/1132 med hensyn til ytterligere utvidelse og oppgraderinger av bruken av digitale verktøy og prosesser innen selskapsretten",
     "doc.about": "Om denne demonstrasjonen",
     "doc.about.p": "Dette er en demonstrasjon i WE BUILD-piloten. Alle data er fiktive testdata, og tjenesten skal ikke brukes som kilde til reelle registeropplysninger."
   };
