@@ -258,6 +258,13 @@ nav.undermeny a[aria-current="page"] { border-bottom-color: var(--gul); }
 .innhold .panel h3 { color: var(--blaa); font-size: 1.1rem; margin: 0 0 6px; }
 .innhold p { max-width: 75ch; }
 .innhold code { background: var(--lavendel); padding: 1px 6px; border-radius: 4px; }
+.innhold pre {
+  background: var(--bakgrunn); border: 1px solid var(--kant); border-left: 5px solid var(--blaa);
+  border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 0 0 18px; overflow-x: auto;
+  font-size: .85rem; line-height: 1.5;
+}
+.innhold pre code { background: none; padding: 0; border-radius: 0; }
+.innhold .panel .table-wrap + h3, .innhold .panel dl + h3 { margin-top: 22px; }
 .innhold ul.lenker { padding-left: 1.4rem; max-width: 80ch; }
 .innhold ul.lenker li { margin-bottom: 8px; overflow-wrap: anywhere; }
 .innhold ul.lenker img.flagg { height: .85em; width: auto; margin-right: .45em; vertical-align: -.05em; outline: 1px solid rgba(0, 0, 0, .2); }

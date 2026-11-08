@@ -19,7 +19,8 @@ python -m http.server 8080
 | Norsk selskap registrerer filial i utlandet | Norsk virksomhet | Tildele fullmakt (EU PoA), Hente fullmakt (EU PoA), Hente EUCC |
 | Utenlandsk virksomhet registrerer filial i Norge | Utenlandsk virksomhet | Filialregistrering |
 
-I tillegg: **Testdata** (oppslag på testvirksomhet og testperson) og **Dokumentasjon** (begreper og lenker).
+I tillegg: **For QTSP-er** (dokumentasjon av autentisk kilde-API-et), **Testdata** (oppslag på testvirksomhet og testperson)
+og **Dokumentasjon** (begreper og lenker).
 
 ## Mappestruktur
 
@@ -32,6 +33,7 @@ forslag/                 WE BUILD-løsningen (dette er den gjeldende versjonen)
   filialregistrering.html  utenlandsk virksomhet registrerer filial i Norge
   oppslag-testvirksomhet.html, oppslag-testperson.html  testdata
   dokumentasjon.html     begreper og referanser
+  autentisk-kilde.html   dokumentasjon av autentisk kilde-API-et (ETSI TS 119 478)
   styles.css             felles stilark
 i18n.js                  språkvelger og alle tekster (NB-ordbok + EN for tekster som bare brukes fra JS)
 bilder.js                skjermbilder som dialog ved steg
