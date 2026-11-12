@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.api">Authentic source API | Brønnøysund Register Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script>try { if (localStorage.getItem("sprak") === "nb") document.documentElement.style.visibility = "hidden"; } catch (e) {}</script>
+</head>
+<body>
+  <a class="skip" href="#innhold" style="position:absolute;left:-999px" data-i18n="skip">Skip to content</a>
+  <div class="side">
+    <div class="deko venstre" aria-hidden="true"></div>
+    <div class="deko hoyre" aria-hidden="true"></div>
+
+    <header class="topp">
+      <a class="logo utsnitt" href="index.html" role="img" aria-label="WE BUILD – home" data-i18n-attr="aria-label=logo.label"></a>
+      <a class="navn" href="index.html" data-i18n="brand">WEBUILD – Brønnøysund Register Centre</a>
+      <nav class="meny" aria-label="Main menu" data-i18n-attr="aria-label=nav.main">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.no">Norwegian company</span>
+            <ul>
+            <li><a href="tildele-fullmakt.html" data-i18n="nav.poa">Powers of attorney</a></li>
+            <li><a href="hente-eucc.html" data-i18n="nav.attest">Business attestations</a></li>
+            </ul></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.fo">Foreign company</span>
+            <ul>
+            <li><a href="filialregistrering.html" data-i18n="nav.branch">Branch registration</a></li>
+            </ul></li>
+          <li class="gruppe"><span class="gnavn" data-i18n="nav.g.qtsp">For QTSPs</span>
+            <ul>
+            <li><a href="autentisk-kilde.html" aria-current="page" data-i18n="nav.api">Authentic source API</a></li>
+            </ul></li>
+          <li class="skille"><a href="oppslag-testvirksomhet.html" data-i18n="nav.testdata">Test data</a></li>
+          <li class="skille"><a href="dokumentasjon.html" data-i18n="nav.doc">Documentation</a></li>
+        </ul>
+      </nav>
+      <div class="sprak" role="group" aria-label="Language" data-i18n-attr="aria-label=lang.label">
+        <button type="button" lang="en" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" lang="nb" data-lang="nb" aria-pressed="false">Norsk</button>
+      </div>
+    </header>
+
+<main class="innhold" id="innhold">
+    <section class="panel">
+      <p class="eyebrow" data-i18n="nav.g.qtsp">For QTSPs</p>
+      <h1 data-i18n="api.h1">Authentic source API</h1>
+      <p data-i18n="api.lead">An interface that lets a qualified trust service provider (QTSP) verify or retrieve company data held by the Brønnøysund Register Centre before it issues an attestation such as the EUCC. It implements the Authentic Source Interface of ETSI TS 119 478 (HTTP variant) on top of the Central Coordinating Register for Legal Entities (Enhetsregisteret).</p>
+      <p class="notice" data-i18n="api.draft"><strong>Draft.</strong> Clients authenticate with a static API key and pass the subject in a header. A conformant OAuth 2.0 setup, with the subject in the access token, is planned.</p>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="api.over">Overview</h2>
+      <dl class="facts">
+        <dt data-i18n="api.o.spec.dt">Specification</dt>
+        <dd data-i18n="api.o.spec.dd">ETSI TS 119 478 V1.1.1, clause 6.1 (HTTP variant): Verify (I2) and Retrieve (I3)</dd>
+        <dt data-i18n="api.o.attr.dt">Attributes</dt>
+        <dd data-i18n="api.o.attr.dd">EU Company Certificate (EUCC) attributes, identified by terms of the European Business Wallet Vocabulary (EBWV v0.1)</dd>
+        <dt data-i18n="api.o.fmt.dt">Format</dt>
+        <dd data-i18n="api.o.fmt.dd">JSON, validated against the normative ETSI schemas. Errors as <code>application/problem+json</code> (RFC 9457), except 401, which has no body</dd>
+        <dt data-i18n="api.o.base.dt">Base URL</dt>
+        <dd data-i18n="api.o.base.dd"><code>https://auth-source-api.app-ppe.brreg.no/api/0.2</code> in the test environment (PPE). <code>0.2</code> is the API version, filled into the <code>basePath</code> server variable of the ETSI OpenAPI.</dd>
+        <dt data-i18n="api.o.swagger.dt">Swagger</dt>
+        <dd data-i18n="api.o.swagger.dd">Swagger UI at <a href="https://auth-source-api.app-ppe.brreg.no/api/swagger" target="_blank" rel="noopener"><code>https://auth-source-api.app-ppe.brreg.no/api/swagger</code></a> and the OpenAPI document at <code>https://auth-source-api.app-ppe.brreg.no/api/api-docs</code>. Reachable only once your IP addresses are opened in the firewall.</dd>
+        <dt data-i18n="api.o.audit.dt">Audit</dt>
+        <dd data-i18n="api.o.audit.dd">Each call is logged with client, subject, attribute identifiers and results, but without attribute values</dd>
+      </dl>
+    </section>
+
+    <section class="panel" id="onboarding">
+      <h2 data-i18n="api.on">Onboarding</h2>
+      <p data-i18n="api.on.p">The API is for qualified trust service providers (QTSPs) taking part in WE BUILD. It is not open to the public: access needs both a firewall opening and an API token that the Brønnøysund Register Centre creates for each QTSP.</p>
+      <ol class="steps">
+        <li data-i18n="api.on.s1"><strong>Request access.</strong> Contact the Brønnøysund Register Centre’s resources in WE BUILD. The request must come from a QTSP participating in WE BUILD. State the organisation, a technical contact, and whether you need <code>verify</code>, <code>retrieve</code> or both.</li>
+        <li data-i18n="api.on.s2"><strong>Firewall opening.</strong> The API is restricted by firewall. Give the public IP addresses or ranges your requests will come from, so that they can be allowed.</li>
+        <li data-i18n="api.on.s3"><strong>API token.</strong> The Brønnøysund Register Centre creates an API token for your QTSP with the agreed scopes.</li>
+        <li data-i18n="api.on.s4"><strong>Explore and test (optional).</strong> For convenience, a Swagger UI is provided at <a href="https://auth-source-api.app-ppe.brreg.no/api/swagger" target="_blank" rel="noopener"><code>https://auth-source-api.app-ppe.brreg.no/api/swagger</code></a>.</li>
+      </ol>
+      <p class="notice" data-i18n="api.on.oauth">When the API moves to OAuth 2.0, the static token is replaced by client registration with an authorization server. Onboarded QTSPs will be told in good time.</p>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="api.ep">Endpoints</h2>
+      <p data-i18n="api.ep.p">Paths are relative to the base URL.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th data-i18n="api.ep.method">Method</th><th data-i18n="api.ep.path">Path</th><th data-i18n="api.ep.scope">Scope</th><th data-i18n="api.ep.desc">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>POST</td><td><code>/verify</code></td><td><code>verify</code></td><td data-i18n="api.ep.verify">Verify attributes of a legal person (I2). The client sends the values it holds and gets a result per attribute.</td></tr>
+            <tr><td>POST</td><td><code>/retrieve</code></td><td><code>retrieve</code></td><td data-i18n="api.ep.retrieve">Retrieve attributes of a legal person (I3). The client names the attributes and gets the values from the register.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 data-i18n="api.hdr">Request headers (draft)</h3>
+      <dl class="facts">
+        <dt><code>X-API-Key</code></dt>
+        <dd data-i18n="api.hdr.key">The API token issued to your QTSP at <a href="#onboarding">onboarding</a>. Each token is registered with the scopes <code>verify</code> and/or <code>retrieve</code>.</dd>
+        <dt><code>X-Subject-Legal-Person-Id</code></dt>
+        <dd data-i18n="api.hdr.subj">The company the request is about: an organisation number (<code>312546248</code>) or an EUID (<code>NOFOR.312546248</code>).</dd>
+        <dt><code>Content-Type</code></dt>
+        <dd><code>application/json</code></dd>
+      </dl>
+
+      <h3 data-i18n="api.body">Request bodies</h3>
+      <ul class="lenker">
+        <li data-i18n="api.body.verify"><code>/verify</code> takes <code>attributes</code>, a list of <code>attributeIdentifier</code> and <code>attributeValue</code> pairs. Each <code>attributeValue</code> must be a JSON object.</li>
+        <li data-i18n="api.body.retrieve"><code>/retrieve</code> takes <code>attributeIdentifiers</code>, a non-empty list of <code>{"attributeIdentifier": …}</code>.</li>
+        <li data-i18n="api.body.prov">Both responses include <code>provider</code>, which identifies the Brønnøysund Register Centre as the authentic source.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="api.ex">Examples</h2>
+      <p data-i18n="api.ex.p">The examples use the test company 312546248 in the Brønnøysund Register Centre’s test environment (PPE), which holds synthetic data.</p>
+
+      <h3 data-i18n="api.ex.verify">Verify the name and a representative</h3>
+      <pre><code>POST https://auth-source-api.app-ppe.brreg.no/api/0.2/verify
+X-API-Key: …
+X-Subject-Legal-Person-Id: 312546248
+Content-Type: application/json
+
+{
+  "attributes": [
+    { "attributeIdentifier": "https://w3id.org/ebwv#legalName",
+      "attributeValue": { "legalName": "AKROBATISK KONSERVATIV LEOPARD ASA" } },
+    { "attributeIdentifier": "https://w3id.org/ebwv#legalRepresentative",
+      "attributeValue": { "legalRepresentative": [
+        { "legalEntity": { "fullName": "Kursiv Kentaur", "dateOfBirth": "1955-01-05" },
+          "typeOfRepresentation": "Jointly" } ] } }
+  ]
+}</code></pre>
+
+      <h3 data-i18n="api.ex.vresp">Response</h3>
+      <pre><code>{
+  "attributeVerificationResults": [
+    { "attributeIdentifier": "https://w3id.org/ebwv#legalName",
+      "attributeVerificationResult": "http://uri.etsi.org/19478/VerificationResult/Match",
+      "attributeValue": { "legalName": "AKROBATISK KONSERVATIV LEOPARD ASA" } },
+    { "attributeIdentifier": "https://w3id.org/ebwv#legalRepresentative",
+      "attributeVerificationResult": "http://uri.etsi.org/19478/VerificationResult/Match",
+      "attributeValue": { "legalRepresentative": [ … ] } }
+  ],
+  "provider": {
+    "legalName": "Brønnøysundregistrene",
+    "identifiers": [ { "identifier": "NOFOR.974760673",
+                       "type": "http://data.europa.eu/eudi/id/EUID" } ],
+    "currentAddress": "Havnegata 48, 8900 Brønnøysund, Norway"
+  }
+}</code></pre>
+
+      <h3 data-i18n="api.ex.retrieve">Retrieve the registered address</h3>
+      <pre><code>POST https://auth-source-api.app-ppe.brreg.no/api/0.2/retrieve
+X-API-Key: …
+X-Subject-Legal-Person-Id: NOFOR.312546248
+Content-Type: application/json
+
+{ "attributeIdentifiers": [
+    { "attributeIdentifier": "https://w3id.org/ebwv#registeredAddress" } ] }</code></pre>
+
+      <h3 data-i18n="api.ex.vresp">Response</h3>
+      <pre><code>{
+  "attributes": [
+    { "attributeIdentifier": "https://w3id.org/ebwv#registeredAddress",
+      "attributeValue": { "registeredAddress": {
+        "@type": "Address",
+        "fullAddress": "Tverlandsveien 193, 8050 TVERLANDET, Norge",
+        "thoroughfare": "Tverlandsveien 193",
+        "postCode": "8050",
+        "postName": "TVERLANDET",
+        "adminUnitL1": "NO" } } }
+  ],
+  "provider": { … }
+}</code></pre>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="api.attr">Attributes</h2>
+      <p data-i18n="api.attr.p">Identifiers are EBWV terms in the namespace <code>https://w3id.org/ebwv#</code>, used until the EU catalogue of attributes (Implementing Regulation (EU) 2025/1569, Art. 7) publishes official identifiers. Values are JSON objects keyed by the term, for example <code>{"legalName": "EQUINOR ASA"}</code>.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th data-i18n="api.attr.ebwv">EBWV term</th><th data-i18n="api.attr.eucc">EUCC attribute</th><th data-i18n="api.attr.val">Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>legalName</code></td><td><code>legal_person_name</code></td><td><code>"EQUINOR ASA"</code></td></tr>
+            <tr><td><code>legalIdentifier</code></td><td><code>legal_person_id</code></td><td><code>{"@type": "Euid", "@value": "NOFOR.312546248"}</code></td></tr>
+            <tr><td><code>registeredCompanyId</code></td><td><code>unique_identifier</code></td><td><code>"312546248"</code></td></tr>
+            <tr><td><code>legalForm</code></td><td><code>legal_form_type</code></td><td><code>"ASA"</code></td></tr>
+            <tr><td><code>registeredCompanyIdCountry</code></td><td><code>registration_member_state</code></td><td><code>"NO"</code></td></tr>
+            <tr><td><code>registeredAddress</code></td><td><code>registered_address</code></td><td><code>Address</code>: <code>fullAddress</code>, <code>thoroughfare</code>, <code>postCode</code>, <code>postName</code>, <code>adminUnitL1</code></td></tr>
+            <tr><td><code>dateOfRegistration</code></td><td><code>registration_date</code></td><td><code>"YYYY-MM-DD"</code></td></tr>
+            <tr><td><code>legalStatus</code></td><td><code>legal_person_status</code></td><td><code>"active"</code> | <code>"inactive"</code></td></tr>
+            <tr><td><code>subscribedCapital</code></td><td><code>share_capital</code></td><td><code>MonetaryAmount</code>: <code>amount</code> (number), <code>currency</code></td></tr>
+            <tr><td><code>activity</code></td><td><code>legal_person_activity</code></td><td><code>scheme</code> (<code>"SN2025"</code>), <code>code</code>, <code>description</code></td></tr>
+            <tr><td><code>contactPoint</code></td><td><code>contact_point</code></td><td><code>ContactPoint</code>: <code>website</code>, <code>hasEmail</code></td></tr>
+            <tr><td><code>legalRepresentative</code></td><td><code>legal_representative</code></td><td data-i18n="api.attr.v.rep">List of <code>LegalRepresentative</code>, see below</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 data-i18n="api.val">Values</h3>
+      <ul class="lenker">
+        <li data-i18n="api.val.id"><code>legalIdentifier</code> is a JSON-LD value object. In a verify request the plain EUID (<code>"NOFOR.312546248"</code>) also matches.</li>
+        <li data-i18n="api.val.status"><code>legalStatus</code> is <code>inactive</code> if the company is deleted, bankrupt, in liquidation or in compulsory dissolution, and <code>active</code> otherwise.</li>
+        <li data-i18n="api.val.act"><code>activity</code> is the main industry code in SN2025, the Norwegian version of NACE Rev. 2.1, with five-digit subclasses such as <code>73.300</code>. The scheme is named in the value because EBWV v0.1 has no type for SN2025.</li>
+        <li data-i18n="api.val.missing">Some attributes, such as <code>contactPoint</code> and <code>subscribedCapital</code>, are not registered for every company. A missing value gives <code>Unknown</code> in Verify and 404 in Retrieve.</li>
+      </ul>
+
+      <h3 data-i18n="api.rep">Legal representatives</h3>
+      <ul class="lenker">
+        <li data-i18n="api.rep.roles">Active holders of the roles DAGL, LEDE, NEST, MEDL, INNH, DTSO, DTPR, KOMP, BEST, FFØR and REPR. DAGL (CEO) is written as the EBWV role <code>CEO</code>; other roles as <code>https://data.brreg.no/enhetsregisteret/api/roller/rolletyper/{code}</code>.</li>
+        <li data-i18n="api.rep.type"><code>typeOfRepresentation</code> comes only from the machine-readable signing combinations: <code>Alone</code> if the person is the only member of at least one combination, <code>Jointly</code> if they are in any other combination, and not set if they are in none. The free-text signatory rule is never interpreted.</li>
+        <li data-i18n="api.rep.shape">Each representative has <code>legalEntity</code>, <code>role</code> and, where known, <code>typeOfRepresentation</code>. A person is a <code>NaturalPerson</code> with <code>fullName</code>, <code>givenName</code>, <code>familyName</code> and <code>dateOfBirth</code>; a company is a <code>LegalPerson</code> with <code>legalName</code>, <code>legalIdentifier</code> and <code>legalForm</code>.</li>
+        <li data-i18n="api.rep.match">The open data has no national identity numbers, so people are matched on full name and date of birth.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="api.res">Verification results</h2>
+      <dl class="facts">
+        <dt><code>Match</code></dt>
+        <dd data-i18n="api.res.match">Every value in the request equals the value in the register. The response repeats the verified value.</dd>
+        <dt><code>MatchWithVariation</code></dt>
+        <dd data-i18n="api.res.var">The values are equal only when case, whitespace, hyphens and diacritics are ignored. The response includes the register’s value, limited to the parts the request asked about.</dd>
+        <dt><code>NoMatch</code></dt>
+        <dd data-i18n="api.res.no">The values differ.</dd>
+        <dt><code>Unknown</code></dt>
+        <dd data-i18n="api.res.unk">The register has no value, or the company is not registered.</dd>
+      </dl>
+      <p data-i18n="api.res.partial">A value matches when every property it states equals the register’s value. Properties left out are ignored, so you can verify part of an attribute, for example only the <code>postCode</code> of <code>registeredAddress</code>. In a list, each requested element must match an element in the register. An empty object never matches.</p>
+
+      <h3 data-i18n="api.err">Errors</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th data-i18n="api.err.code">Status</th><th data-i18n="api.err.mean">Meaning</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>400</td><td data-i18n="api.err.400">Malformed request, or a missing or invalid subject header</td></tr>
+            <tr><td>401</td><td data-i18n="api.err.401">Missing or invalid token, or the token lacks the scope. No response body.</td></tr>
+            <tr><td>404</td><td data-i18n="api.err.404">Unknown attribute identifier. In Retrieve also: the company is not registered, or a requested attribute has no value.</td></tr>
+            <tr><td>500</td><td data-i18n="api.err.500">Unexpected error in the service</td></tr>
+            <tr><td>501</td><td data-i18n="api.err.501">Attribute fragments or mandates, which are not supported yet</td></tr>
+            <tr><td>503</td><td data-i18n="api.err.503">The register is unavailable after retries</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <section class="panel">
+      <h2 data-i18n="api.refs">References</h2>
+      <ul class="lenker">
+        <li><a href="https://www.etsi.org/deliver/etsi_ts/119400_119499/119478/01.01.01_60/ts_119478v010101p.pdf" target="_blank" rel="noopener" data-i18n="api.l.etsi">ETSI TS 119 478 V1.1.1: Specification of interfaces related to Authentic Sources</a></li>
+        <li><a href="https://forge.etsi.org/rep/esi/x19_478_authentic_source_interface" target="_blank" rel="noopener" data-i18n="api.l.forge">ETSI Forge: OpenAPI and JSON schemas for TS 119 478 (Annex A and B)</a></li>
+        <li><a href="https://webuild-consortium.github.io/wp4-semantics-group/ebwv/vocabulary.html" target="_blank" rel="noopener" data-i18n="api.l.ebwv">European Business Wallet Vocabulary (EBWV) v0.1</a></li>
+        <li><a href="https://eur-lex.europa.eu/eli/reg_impl/2025/1569/oj" target="_blank" rel="noopener" data-i18n="api.l.cir">Implementing Regulation (EU) 2025/1569 on verification of attributes against authentic sources</a></li>
+        <li><a href="https://data.brreg.no/enhetsregisteret/api/dokumentasjon/en/index.html" target="_blank" rel="noopener" data-i18n="api.l.er">Open Enhetsregisteret API (documentation)</a></li>
+        <li><a href="https://www.rfc-editor.org/rfc/rfc9457" target="_blank" rel="noopener" data-i18n="api.l.rfc">RFC 9457: Problem Details for HTTP APIs</a></li>
+      </ul>
+    </section>
+  </main>
+
+    <p class="ansvar"><span data-i18n="ansvar">This is a proposal and a demonstration using fictitious data. The service is provided “as is”, without warranties, and must not be used as a source of actual register information.</span> <span class="ki" data-i18n="ki">This documentation was produced with the help of generative artificial intelligence (AI), Claude Code from Anthropic. The content has been checked over by project staff.</span></p>
+    <footer class="bunn">
+      <div class="eu utsnitt" role="img" aria-label="Co-funded by the European Union"></div>
+    </footer>
+  </div>
+  <script src="../i18n.js"></script>
+  <script src="../bilder.js"></script>
+</body>
+</html>
