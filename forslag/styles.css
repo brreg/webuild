@@ -199,9 +199,10 @@ h2 { color: var(--blaa); font-size: 1.3rem; margin: 34px 0 20px; }
 .sw.ute { border: 1px dashed #8f98b3; }
 
 /* Menygrupper */
-nav.meny li.gruppe { display: flex; align-items: center; gap: 2px; margin-left: 8px; padding-left: 12px; border-left: 2px solid var(--gul); }
+nav.meny > ul { align-items: flex-end; }
+nav.meny li.gruppe { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin-left: 8px; padding-left: 12px; border-left: 2px solid var(--gul); }
 nav.meny > ul > li.skille { display: flex; align-items: center; margin-left: 8px; padding-left: 12px; border-left: 2px solid var(--gul); }
-nav.meny .gnavn { font-size: .75rem; font-weight: 600; color: var(--dempet); }
+nav.meny .gnavn { font-size: .75rem; font-weight: 600; color: var(--dempet); padding-left: 10px; line-height: 1.2; }
 
 footer.bunn {
   position: absolute; left: var(--venstre); bottom: 0;
