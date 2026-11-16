@@ -200,6 +200,7 @@
     "doc.ext.eucc.p": "Utsteder fullmakten og firmaattesten fra selskapets hjemstat.",
     "doc.ext.nat": "Nasjonale løsninger for filialregistrering",
     "doc.ext.nat.p": "Der et utenlandsk selskap registrerer en filial i hver medlemsstat i dag.",
+    "doc.ext.wal.li": "Kompatible personlommebøker: <a href=\"https://www.credenco.com/product/wallet-app\" target=\"_blank\" rel=\"noopener\">Credenco Wallet App</a>",
     "land.velg": "Velg et land for å åpne den nasjonale løsningen:",
     "land.fi": "Finland",
     "land.velg.eucc": "Velg hjemlandet ditt for å åpne utstederen av EU PoA og EUCC:",
